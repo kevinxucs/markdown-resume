@@ -20,7 +20,8 @@ $config = (object) array(
     "output"   => "./output/",
     "template" => "modern",
     "refresh"  => false,
-    "pdf"      => false
+    "pdf"      => false,
+    "test"     => false
 );
 
 // Command line arguments to populate the config
@@ -29,7 +30,8 @@ $opts  = array(
     "o:"  => "output:",     // output
     "t:"  => "template:",   // template
     "r"   => "refresh",     // refresh
-    "p"   => "pdf"          // pdf output
+    "p"   => "pdf",         // pdf output
+    "T"   => "test"         // pdf test output
 );
 
 // Fetch the options from the command line arguments
@@ -116,14 +118,16 @@ if ($config->pdf) {
     $pdf_classed = str_replace('body class=""', 'body class="pdf"', $rendered);
 
     // Save the new pdf-ready html to a temp destination
-    file_put_contents($pdf_source, $pdf_classed );
+    file_put_contents($pdf_source, $pdf_classed);
 
-    // Process the document with wkhtmltopdf
-    exec('wkhtmltopdf ' . $pdf_source .' ' . $pdf_output);
+    if (!$config->pdf) {
+        // Process the document with wkhtmltopdf
+        exec('wkhtmltopdf ' . $pdf_source . ' ' . $pdf_output);
 
-    // Unlink the temporary file
-    unlink($pdf_source);
-    echo "Wrote pdf to $pdf_output\n";
+        // Unlink the temporary file
+        unlink($pdf_source);
+        echo "Wrote pdf to $pdf_output\n";
+    }
 }
 
 /* End of file resume.php */
