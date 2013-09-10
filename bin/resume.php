@@ -122,7 +122,7 @@ if ($config->pdf) {
     // Save the new pdf-ready html to a temp destination
     file_put_contents($pdf_source, $pdf_classed);
 
-    if (!$config->pdf) {
+    if (!$config->test) {
         // Process the document with wkhtmltopdf
         exec('wkhtmltopdf ' . $pdf_source . ' ' . $pdf_output);
 
