@@ -87,10 +87,12 @@ $resume = SmartyPants(Markdown($resume));
 
 // We'll construct the title for the html document from the h1 and h2 tags
 $html = str_get_html($resume);
+$h1 = $html->find('h1', 0)->innertext;
+$h2 = $html->find('h2', 0)->innertext;
 $title = sprintf(
-    '%s | %s',
-    $html->find('h1', 0)->innertext,
-    $html->find('h2', 0)->innertext
+    is_null($h2) ? '%s' : "%s | %s",
+    $h1,
+    $h2
 );
 
 // We'll now render the Markdown into an html file with Mustache Templates
