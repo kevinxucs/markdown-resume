@@ -74,7 +74,7 @@ if (!file_exists($template_path)) {
 // We build these into a single string so that we can deploy this resume as a
 // single file.
 $css = new AssetCollection(
-    array(new GlobAsset($template_path . '/css/*.css')),
+    array(new GlobAsset($template_path . '/css/*.*ss')),
     array(new Filter\LessphpFilter())
 );
 $style = $css->dump();
