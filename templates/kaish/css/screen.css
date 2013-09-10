@@ -27,15 +27,16 @@
 */
 
 @media screen and (min-width: 37.5em) {
-  body {
+  /*body {
     padding: 2em 0;
   }
   blockquote {
     top: -11px;
     right: 50px;
     position: absolute;
-  }
-  h1 { /* Open up the top section height so we don't collapse on the blockquote */
+  }*/
+  /* Open up the top section height so we don't collapse on the blockquote */
+  /*h1 {
     margin-top: .5em;
   }
   ol {
@@ -47,7 +48,7 @@
   }
   ol li:nth-child(1), ol li:nth-child(2) {
     border-top: none;
-  }
+  }*/
 }
 
 
@@ -58,7 +59,7 @@
 */
 
 @media screen and (min-width: 57em) {
-  .container {
+  /*.container {
     width: 912px;
   }
   .resume {
@@ -94,10 +95,10 @@
     width: 84%;
   }
 
-/*  ul li {
+  ul li {
     width: 28%;
     float: left;
-  }*/
+  }
   ul dl {
     dt {
       font-size: 122%;
@@ -141,8 +142,7 @@
       font-style: normal;
     }
 
-  }
-
+  }*/
 
 }
 
