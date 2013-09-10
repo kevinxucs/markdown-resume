@@ -1,9 +1,13 @@
-@black: #0D0D0D;
-@white: #F4F4F4;
-@red: #AD0105;
-@grey: #5A5A5A;
-@lightGrey: #A4A4A4;
-@darkGrey: #282828;
+@black:             #0D0D0D;
+@white:             #F4F4F4;
+@red:               #AD0105;
+@grey:              #5A5A5A;
+@lightGrey:         #A4A4A4;
+@darkGrey:          #282828;
+
+@sansFontFamily:    "Montserrat", "Helvetica", Arial, sans-serif;
+@serifFontFamily:   "Rokkitt", Segoe, "Segoe UI", "Times New Roman", Times, serif;
+@monoFontFamily:    Monaco, Menlo, Consolas, "Courier New", monospace;
 
 // .clearfix {
 //   zoom: 1;
@@ -17,11 +21,11 @@
 // }
 
 body {
-  font-family: 'Hoefler Text', Times New Roman, Times, serif;
+  font-family: @serifFontFamily;
   color: @darkGrey;
 }
 h1, h2, h3, h4, ul dl dt {
-  font-family: Futura, "Century Gothic", AppleGothic, sans-serif;
+  font-family: @sansFontFamily;
 }
 
 .container {
@@ -79,6 +83,7 @@ h1 {
   letter-spacing: -1px;
   font-weight: normal;
 }
+
 h2 {
   margin: 0;
   padding: 0;
